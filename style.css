@@ -17,10 +17,14 @@ html {
     align-items: center;
 }
 
+* {box-sizing: border-box;/* 모든 요소에 box-sizing: border-box 적용 */
+}
+
 .profile-card {
     display: flex;
-    width: 80%;
-    max-width: 800px;
+    flex: 2;
+    width: 100%;
+    max-width: 1000px;
     background: white;
     border-radius: 8px;
     overflow: hidden;
