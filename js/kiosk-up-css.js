@@ -1,30 +1,27 @@
 // script.js
 
-
 // 모든 탭 버튼과 메뉴를 가져오기
-const tabButtons = document.querySelectorAll('.tab-button'); // 탭 버튼들
-const menus = document.querySelectorAll('.menu'); // 메뉴들
+const tabButtons = document.querySelectorAll('.tab-button');
+const menus = document.querySelectorAll('.menu');
+const cart = document.getElementById('cart');
+const cartItemsContainer = document.getElementById('cart-items');
+const clearCartButton = document.getElementById('clear-cart');
 
-// 탭 클릭 이벤트
+let cartItems = []; // 장바구니 항목 저장
+
+// 탭을 클릭하면 다른 메뉴를 보여주기
 tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const tab = button.getAttribute('data-tab'); // 클릭된 탭의 data-tab 속성 값
+button.addEventListener('click', () => {
+    const tab = button.getAttribute('data-tab');
 
-        // 모든 탭 버튼에서 active 클래스 제거
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-
-        // 클릭된 탭 버튼에 active 클래스 추가
-        button.classList.add('active');
-
-        // 모든 메뉴를 숨기고 클릭된 탭에 해당하는 메뉴만 표시
-        menus.forEach(menu => {
-            if (menu.getAttribute('data-tab-content') === tab) {
-                menu.style.display = 'block';
-            } else {
-                menu.style.display = 'none';
-            }
-        });
+    menus.forEach(menu => {
+        if (menu.getAttribute('data-tab-content') === tab) {
+        menu.style.display = 'block';
+        } else {
+        menu.style.display = 'none';
+    }
     });
+});
 });
 
 // 메뉴의 "추가" 버튼 클릭 시
@@ -55,12 +52,11 @@ function renderCart() {
     cart.style.display = 'none';
     } else {
     cart.style.display = 'block';
+
     cartItems.forEach((item, index) => {
         const div = document.createElement('div');
         div.innerHTML = `
-        <p>${item.name}</p>
-        <p>(${item.price}원)</p>
-        <p>${item.quantity}</p>
+        <p>${item.name} (${item.price}원) x ${item.quantity}</p>
         <button class="increase">+</button>
         <button class="decrease">-</button>
         <button class="remove">x</button>
@@ -87,9 +83,13 @@ function renderCart() {
         cartItems.splice(index, 1);
         renderCart();
         });
-
+        
         cartItemsContainer.appendChild(div);
     });
+
+    // 총 결제 금액 계산
+    const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    buyButton.textContent = `${total}원 결제하기`;
     }
 }
 
@@ -98,3 +98,5 @@ clearCartButton.addEventListener('click', () => {
     cartItems = [];
     renderCart();
 });
+
+
