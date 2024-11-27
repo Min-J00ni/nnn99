@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu & Cart</title>
+    <link rel="stylesheet" href="/nnn99/css/kiosk-up.css">
+</head>
+
+<body>
+<id="app">
+<!--탭 설정-->
+    <div class="tabs">
+        <button class="tab-button" data-tab="1">Coffe</button>
+        <button class="tab-button" data-tab="2">Non Coffe</button>
+        <button class="tab-button" data-tab="3">Dessert</button>
+    </div>
+<!--커피메뉴 세팅-->
+    <div class="menu" data-tab-content="1">
+    <div class="menu-item" data-name="아메리카노" data-price="3000">
+        <p>아메리카노</p>
+        <p>3000원</p>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="라떼" data-price="4000">
+        <p>라떼</p>
+        <p>4000원</p>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="모카 라떼" data-price="4300">
+        <p>모카 라떼</p>
+        <p>4300원</p>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="바닐라 라떼" data-price="4500">
+        <p>바닐라 라떼</p>
+        <p>4500원</p>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="캬라멜마끼아또" data-price="5500">
+        <p>캬라멜마끼아또</p>
+        <p>5500원</p>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="돌체라떼" data-price="5600">
+        <p>돌체라떼</p>
+        <p>5600원</p>
+        <button class="add-to-cart">추가</button>
+    </div>
+    </div>
+
+<!--논커피메뉴 세팅-->
+    <div class="menu" data-tab-content="2" style="display: none;">
+    <div class="menu-item" data-name="밀크티라떼" data-price="6000">
+        <p>밀크티라떼</p>
+        <p>6000원</p>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="생초코라떼" data-price="6000">
+        <p>생초코라떼</p>
+        <p>6000원</p>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="흑임자라떼" data-price="6000">
+        <p>흑임자라떼</p>
+        <p>6000원</p>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="제주말차라떼" data-price="6000">
+        <p>제주말차라떼</p>
+        <p>6000원</p>
+        <button class="add-to-cart">추가</button>
+    </div>
+    </div>
+
+<!--디저트 메뉴 세팅-->
+<div class="menu" data-tab-content="3" style="display: none;">
+    <div class="menu-item" data-name="밀크티 케이크" data-price="6000">
+        <p>밀크티 케이크</p>
+        <p>6000원</p>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="생초코 케이크" data-price="6000">
+        <p>생초코 케이크</p>
+        <p>6000원</p>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="흑임자 케이크" data-price="6000">
+        <p>흑임자 케이크</p>
+        <p>6000원</p>
+        <button class="add-to-cart">추가</button>
+    </div>
+    <div class="menu-item" data-name="제주말차 케이크" data-price="6000">
+        <p>제주말차 케이크</p>
+        <p>6000원</p>
+        <button class="add-to-cart">추가</button>
+    </div>
+</div>
+
+<!--카트에 담기-->
+    <div class="cart" id="cart">
+        <h3>Cart</h3>
+        <div id="cart-items"></div>
+        <button id="clear-cart">초기화</button>
+    </div>
+    </div>
+
+    <button class="buy it">결제</button>
+
+    <script src="/nnn99/js/kiosk-up.jsx"></script>
+</body>
+</html>

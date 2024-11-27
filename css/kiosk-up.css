@@ -1,0 +1,37 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.tabs {
+    display: flex;
+    background-color: #f4f4f4;
+    padding: 10px;
+    }
+
+    .tab-button {
+    margin-right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    }
+
+    .menu {
+    margin-top: 20px;
+    }
+
+    .menu-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    }
+
+    .cart {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    }
