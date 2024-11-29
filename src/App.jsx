@@ -1,36 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import Header from "./components/header.jsx"; // 헤더 컴포넌트 import
+import Tabs from "./components/tabs.jsx"; //탭 컴포넌트 import
+import MenuCard from "./components/menu/manu-card.jsx"; // 메뉴 카드 컴포넌트 import
+import Cart from "./components/carts/cart.jsx"; // 장바구니 컴포넌트 import
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  // 장바구니 상태 관리
+  const [cartItems, setCartItems] = useState([]);
 
   return (
-    <>
-      <div>
-        이게되네?
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="app-container">
+      {/* 헤더 컴포넌트 */}
+      <Header />
 
-export default App
+      {/*탭 컴포넌트*/}
+      <Tabs cartItems={cartItems} setCartItems={setCartItems} />
+
+
+      {/* 메뉴 카드 컴포넌트 */}
+      <MenuCard cartItems={cartItems} setCartItems={setCartItems} />
+
+      {/* 장바구니 컴포넌트 */}
+      <Cart cartItems={cartItems} setCartItems={setCartItems} />
+    </div>
+  );
+};
+
+export default App;

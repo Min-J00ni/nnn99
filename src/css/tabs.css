@@ -1,0 +1,29 @@
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #F9F9F9;
+}
+
+.tab-button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px; /* 글꼴 크기는 유지 */
+    color: #aaa;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.tab-button.active {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+}
+
+.tab-content {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}

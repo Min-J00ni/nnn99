@@ -1,0 +1,27 @@
+/* 헤더 전체를 감싸는 컨테이너 스타일 */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* 로고와 버튼 간격을 양 끝으로 배치 */
+    align-items: center; /* 수직 중앙 정렬 */
+    background-color: #ffffff; /* 헤더 배경색 */
+    padding: 32px 60px; /* 헤더 내부 여백 */
+    position: fixed; /* 화면 상단 고정 */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* 다른 요소보다 위에 표시 */
+}
+
+  /* 로고 영역 스타일 */
+.logo-area {
+    background-color: #ffffff; /* 파란색 배경 */
+    padding: 10px 20px; /* 내부 여백 */
+    border-radius: 0px; /* 둥근 모서리 */
+}
+
+  /* 로고 텍스트 스타일 */
+.logo-text {
+    font-size: 48px; /* 텍스트 크기 */
+    font-weight: 700; /* 텍스트 굵기 */
+    color: #000; /* 텍스트 색상 */
+}
