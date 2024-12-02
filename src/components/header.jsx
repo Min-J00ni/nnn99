@@ -4,7 +4,7 @@ import Language from "./language.jsx"; // LanguageButton 컴포넌트 불러오�
 const Header = () => {
     return (
     <header className="header-container">
-      {/* 로고가 들어갈 파란색 배경 부분 */}
+      {/* 로고가 들어갈 배경 부분 */}
         <div className="logo-area">
         <span className="logo-text">NNN Cafe</span>
         </div>
